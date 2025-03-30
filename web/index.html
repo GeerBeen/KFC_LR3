@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Predict Weather</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="text-bg-secondary">
+    
+<header class="row text-bg-dark m-0 p-3">
+  <span class="col h3 text-start">Практична робота 3</span> 
+  <span class="col h3 text-center">Передбачення погоди</span> 
+  <span class="col h3 text-end">ТВ-32 Михайленко Роман</span>
+</header>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+        <h4>Поля вводу:</h4>
+        <form id="weatherForm">
+          <div class="mb-3">
+            <label>Температура за 1 день до поточного (°C):</label>
+            <input class="form-control" type="number" id="temperature_lag1" value="15.0" required>
+          </div>
+          <div class="mb-3">
+            <label>Температура за 2 дні до поточного (°C):</label>
+            <input class="form-control" type="number" id="temperature_lag2" value="14.8" required>
+          </div>
+          <div class="mb-3">
+            <label>Температура за 3 дні до поточного (°C):</label>
+            <input class="form-control" type="number" id="temperature_lag3" value="14.5" required>
+          </div>
+          <div class="mb-3">
+            <label>Температура за 4 дні до поточного (°C):</label>
+            <input class="form-control" type="number" id="temperature_lag4" value="14.2" required>
+          </div>
+          <div class="mb-3">
+            <label>Опади (мм):</label>
+            <input class="form-control" type="number" id="precipitation" value="5.0" required>
+          </div>
+          <div class="mb-3">
+            <label>Вологість (%):</label>
+            <input class="form-control" type="number" id="humidity" value="65.0" required>
+          </div>
+          <div class="mb-3">
+            <label>Швидкість вітру (км/год):</label>
+            <input class="form-control" type="number" id="wind_speed" value="12.3" required>
+          </div>
+          <div class="mb-3">
+            <label>Хмарність (%):</label>
+            <input class="form-control" type="number" id="cloud_cover" value="80.0" required>
+          </div>
+          <div class="mb-3">
+            <label>День у році:</label>
+            <input class="form-control" type="number" id="day_of_year" value="150" required>
+          </div>
+          <div class="mb-3">
+            <label>Тиск (hPa):</label>
+            <input class="form-control" type="number" id="pressure" value="1012.5" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Отримати прогноз</button>
+        </form>
+      </div>
+      
+
+    <div class="col-md-6 text-center">
+      <h4>Прогнозована температура на завтра:</h4>
+      <div class="alert alert-info mt-3" style="font-size: 24px;">
+        <span id="prediction">-</span>°C
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
